@@ -5,6 +5,7 @@ import MainLayOut from "../Layouts/MainLayOut";
 import Signin from "../Pages/Signin/Signin";
 import HomePage from "../Pages/Home/HomePage";
 import AddProductPage from "../Pages/AddProductPage/AddProductPage";
+import MyCartPage from "../Pages/MyCartPage/MyCartPage";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -30,7 +31,7 @@ const myCreatedRoutes = createBrowserRouter([
          },
          {
             path: '/my-cart',
-            element: <AddProductPage></AddProductPage>
+            element: <MyCartPage></MyCartPage>
          },
       ]
    }

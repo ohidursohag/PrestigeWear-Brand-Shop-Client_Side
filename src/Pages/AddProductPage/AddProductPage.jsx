@@ -1,7 +1,7 @@
 
 const AddProductPage = () => {
    return (
-      <div>
+      <div className="px-2">
          
       </div>
    );
