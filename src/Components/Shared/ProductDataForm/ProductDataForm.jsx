@@ -14,12 +14,12 @@ const ProductDataForm = () => {
                      <input type="text" name="productType" defaultValue={'productType'} id="productType" placeholder="Enter Product Type" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
                   </div>
                   <div>
-                     <label htmlFor="productImage" className="text-xl font-medium ">Product productImage</label>
-                     <input type="text" name="productImage" defaultValue={'productImage'} id="productImage" placeholder="Enter Product productImage" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
+                     <label htmlFor="productPrice" className="text-xl font-medium ">Product Price</label>
+                     <input type="number" name="productPrice" defaultValue={''} id="productPrice" placeholder="Enter Product Price" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
                   </div>
                   <div>
                      <label htmlFor="productRatings" className="text-xl font-medium ">Product Ratings</label>
-                     <input type="number" name="productRatings" defaultValue={'productRatings'} id="productRatings" placeholder="Enter Product Ratings" className="  h-14 w-full mt-1  bg-white px-4  outline-none" />
+                     <input type="number" step="0.5" min={0} max={5} name="productRatings" defaultValue={''} id="productRatings" placeholder="Enter Product Ratings" className="  h-14 w-full mt-1  bg-white px-4  outline-none" />
                   </div>
                </div>
                <div className="md:w-[50%] space-y-6">
@@ -31,7 +31,7 @@ const ProductDataForm = () => {
                   
                   <div>
                      <label htmlFor="productImage" className="text-xl font-medium ">Product Image</label>
-                     <input type="number" name="productImage" defaultValue={'productImage'} id="productImage" placeholder="Enter Product Image URL" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
+                     <input type="url" name="productImage" defaultValue={'productImage'} id="productImage" placeholder="Enter Product Image URL" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
                   </div>
                   <div>
                      <label htmlFor="shortDescription" className="text-xl font-medium ">Short Description</label>

@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import BrandsNameCards from "../../Components/BrandsNameCards/BrandsNameCards";
+import BrandsNameCards from "../../Components/HomePageComponents/BrandsNameCards/BrandsNameCards";
 
 const HomePage = () => {
    const brands = useLoaderData()
