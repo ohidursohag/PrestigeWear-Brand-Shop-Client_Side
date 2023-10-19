@@ -60,8 +60,8 @@ const Signup = () => {
       <div>
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center mb-10">
             <div className="relative w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
-
-               <div className=" py-10 px-5 sm:px-10 flex  w-full flex-col rounded-3xl bg-slate-200 bg-opacity-20 shadow">
+               <div className="py-10 text-center text-3xl text-white font-bold">Login Your Account</div>
+               <div className=" pb-10 px-5 sm:px-10 flex  w-full flex-col rounded-3xl">
                   <form onSubmit={handleSignUp} className="text-center">
                      <div className="group relative mb-7">
                         <input type="text" id="name" name="name" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
