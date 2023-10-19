@@ -1,9 +1,13 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Signin = () => {
-
+   const [showPass, setShowPass] = useState(false);
+   const { loginWithEmailPass } = useContext(AuthContext);
+   const navigate = useNavigate()
    const handleLogIn = e => {
       e.preventDefault();
       const form = new FormData(e.currentTarget);
@@ -11,11 +15,28 @@ const Signin = () => {
       const password = form.get('password')
       console.log(email, password);
 
-      
+      loginWithEmailPass(email, password)
+         .then(res => {
+            console.log(res.user);
+            Swal.fire({
+               icon: 'success',
+               title: 'Sucessfully logged in',
+               text: `Welcome!`,
+            })
+            navigate('/')
+         })
+         .catch(error => {
+            console.error(error.message);
+            Swal.fire({
+               icon: 'error',
+               title: 'Ivalid Email or Password',
+               text: `Try Again!`,
+            })
+         })
    }
 
 
-   const [showPass, setShowPass] = useState(false);
+   
    return (
       <div>       
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center ">
