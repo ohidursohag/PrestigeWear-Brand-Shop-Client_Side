@@ -4,23 +4,23 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const Signin = () => {
 
-
    const handleLogIn = e => {
       e.preventDefault();
       const form = new FormData(e.currentTarget);
       const email = form.get('email')
       const password = form.get('password')
       console.log(email, password);
+
+      
    }
 
 
    const [showPass, setShowPass] = useState(false);
    return (
-      <div>
-         
+      <div>       
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center ">
             <div className="relative  w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
-               <div className="py-10 text-center text-3xl text-white font-bold">Login Your Account</div>
+               <div className="py-10 text-center text-3xl text-white font-bold">Signin on Your Account</div>
                <div className=" pb-16 px-5 sm:px-10 flex  w-full flex-col rounded-3xl ">
                   
                   <form onSubmit={handleLogIn} className=" space-y-8  text-center">
