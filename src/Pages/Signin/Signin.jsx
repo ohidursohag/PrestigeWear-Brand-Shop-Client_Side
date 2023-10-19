@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Signin = () => {
    const [showPass, setShowPass] = useState(false);
-   const { loginWithEmailPass } = useContext(AuthContext);
+   const { loginWithEmailPass, googleLogin } = useContext(AuthContext);
    const navigate = useNavigate()
    const handleLogIn = e => {
       e.preventDefault();
@@ -15,6 +15,7 @@ const Signin = () => {
       const password = form.get('password')
       console.log(email, password);
 
+      // Login with email and password
       loginWithEmailPass(email, password)
          .then(res => {
             console.log(res.user);
@@ -32,23 +33,36 @@ const Signin = () => {
                title: 'Ivalid Email or Password',
                text: `Try Again!`,
             })
-         })
+         })    
+
    }
 
+   // Login with Google Account
+   const handleGoogleSignIn = () => {
+      googleLogin()
+         .then(result => {
+            console.log(result.user);
+            Swal.fire({
+               icon: 'success',
+               title: ' Signin successfull',
+            })
+            navigate('/')
+         })
+         .catch(error => { console.error(error.message) })
+   }
 
-   
    return (
-      <div>       
+      <div>
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center ">
             <div className="relative  w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
                <div className="py-10 text-center text-3xl text-white font-bold">Signin on Your Account</div>
                <div className=" pb-16 px-5 sm:px-10 flex  w-full flex-col rounded-3xl ">
-                  
+
                   <form onSubmit={handleLogIn} className=" space-y-8  text-center">
                      <div className="group relative">
                         <input
-                           type="email" name="email" id="username" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
-                        <label htmlFor="username" className={`absolute left-2 top-0 flex h-full  items-center pl-2 text-base transform transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white`}>Email</label>
+                           type="email" name="email" id="email" required className="peer h-14 w-full rounded-3xl bg-gray-100 px-4 text-sm outline-none" />
+                        <label htmlFor="email" className={`absolute left-2 top-0 flex h-full  items-center pl-2 text-base transform transition-all duration-500 group-focus-within:-top-7 group-focus-within:h-1/2 group-focus-within:pl-0 group-focus-within:text-base group-focus-within:text-white peer-valid:-top-7 peer-valid:h-1/2 peer-valid:pl-0 peer-valid:text-base peer-valid:text-white`}>Email</label>
                      </div>
 
                      <div className="group relative">
@@ -75,8 +89,8 @@ const Signin = () => {
                   </form>
 
                   <div className="flex flex-col justify-center items-center gap-3 ">
-                     <div
-                         className="cursor-pointer group border-white group  mt-5 inline-flex h-12 w-[310px] sm:w-[350px] items-center justify-center gap-2  rounded-3xl border px-4 py-2 transition-colors duration-300  hover:bg-[#34A353] hover:border-[#34A353] focus:outline-none">
+                     <div onClick={handleGoogleSignIn}
+                        className="cursor-pointer group border-white group  mt-5 inline-flex h-12 w-[310px] sm:w-[350px] items-center justify-center gap-2  rounded-3xl border px-4 py-2 transition-colors duration-300  hover:bg-[#34A353] hover:border-[#34A353] focus:outline-none">
                         <span>
                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M15.5005 8.18332C15.5005 7.66664 15.4505 7.13331 15.3671 6.6333H8.15039V9.58333H12.2838C12.1171 10.5333 11.5671 11.3667 10.7504 11.9L13.2171 13.8167C14.6671 12.4667 15.5005 10.5 15.5005 8.18332Z" fill="white" />

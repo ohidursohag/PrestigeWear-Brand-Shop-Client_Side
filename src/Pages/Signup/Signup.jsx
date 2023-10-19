@@ -7,7 +7,7 @@ import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
    const [showPass, setShowPass] = useState(false);
-   const { registerWithEmailPass } = useContext(AuthContext);
+   const { registerWithEmailPass, googleLogin } = useContext(AuthContext);
    const navigate = useNavigate()
    const handleSignUp = (e) => {
       e.preventDefault();
@@ -84,6 +84,20 @@ const Signup = () => {
          })
    }
 
+   // Signup with google account
+   const handleGoogleSignUp = () => {
+      googleLogin()
+         .then(result => {
+            console.log(result.user);
+            Swal.fire({
+               icon: 'success',
+               title: 'Sucessfully Registered',
+            })
+            navigate('/')
+         })
+         .catch(error => { console.error(error.message) })
+   }
+
    return (
       <div>
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center mb-10">
@@ -130,7 +144,7 @@ const Signup = () => {
 
                   <div className="flex flex-col justify-center items-center gap-3 ">
 
-                     <div 
+                     <div onClick={handleGoogleSignUp}
                         className="cursor-pointer group border-white-500 group w-[310px] sm:w-[350px]  mt-5 inline-flex h-12  items-center justify-center gap-2  rounded-3xl border px-4 py-2 transition-colors duration-300  hover:bg-[#34A353] hover:border-[#34A353] focus:outline-none">
                         <span>
                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

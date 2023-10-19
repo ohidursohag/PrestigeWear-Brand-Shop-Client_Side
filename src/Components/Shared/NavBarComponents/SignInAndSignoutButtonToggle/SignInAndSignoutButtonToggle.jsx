@@ -37,8 +37,8 @@ const SignInAndSignoutButtonToggle = () => {
             user
                ? <div className=' '>
 
-                  <NavLink className={({ isActive }) => isActive ? 'text-white md:text-[#FF444A] md:border-[3px] md:border-[#FF444A] md:rounded-lg md:px-2 md:py-1' : 'border-[3px] rounded-lg px-2 py-1'} onClick={handleSignOut}
-                     to='/' >
+                  <NavLink className='text-white md:text-[#FF444A] md:border-[3px] md:border-[#FF444A] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}
+                     to='' >
                      <span className=' text-xl font-medium ' >Sign Out</span>
                   </NavLink>
                </div>

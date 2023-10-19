@@ -27,10 +27,7 @@ const ProductDataForm = () => {
                      <label htmlFor="brandName" className="text-xl font-medium ">Brand Name</label>
                      <input type="text" name="brandName" defaultValue={'brandName'} id="brandName" placeholder="Enter Brand Name" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
                   </div>
-                  {/* <div>
-                     <label htmlFor="taste" className="text-xl font-medium ">Taste</label>
-                     <input type="text" name="taste" defaultValue={'taste'} id="taste" placeholder="Enter coffee taste" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
-                  </div> */}
+                  
                   
                   <div>
                      <label htmlFor="productImage" className="text-xl font-medium ">Product Image</label>
