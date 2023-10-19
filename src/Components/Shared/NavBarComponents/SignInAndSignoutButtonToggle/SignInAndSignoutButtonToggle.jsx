@@ -5,7 +5,7 @@ import { AuthContext } from '../../../../Providers/AuthProvider';
 const SignInAndSignoutButtonToggle = () => {
    const { user, logOut } = useContext(AuthContext)
    const location = useLocation()
-   console.log(location);
+   // console.log(location);
    const handleSignOut = () => {
       Swal.fire({
          title: 'Are you sure?',
@@ -30,7 +30,6 @@ const SignInAndSignoutButtonToggle = () => {
       })
       
    }
-   console.log(user);
    return (
       <div className='text-center md:text-left'>
          {
