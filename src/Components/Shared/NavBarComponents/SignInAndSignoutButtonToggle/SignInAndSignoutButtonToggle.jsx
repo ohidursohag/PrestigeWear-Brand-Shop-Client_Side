@@ -7,14 +7,28 @@ const SignInAndSignoutButtonToggle = () => {
    const location = useLocation()
    console.log(location);
    const handleSignOut = () => {
-      logOut()
-         .then(() => {
-            Swal.fire({
-               icon: 'success',
-               title: 'Sucessfully logged Out',
-            })
-         })
-         .catch(err => { console.error(err.message) })
+      Swal.fire({
+         title: 'Are you sure?',
+         text: "You want to sign out?",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#3085d6',
+         cancelButtonColor: '#d33',
+         confirmButtonText: 'Confirm'
+      }).then(async (result) => {
+         if (result.isConfirmed) {
+            logOut()
+               .then(() => {
+                  Swal.fire({
+                     icon: 'success',
+                     title: 'Sucessfully Signed Out',
+                  })
+               })
+               .catch(err => { console.error(err.message) })
+         }
+
+      })
+      
    }
    console.log(user);
    return (
