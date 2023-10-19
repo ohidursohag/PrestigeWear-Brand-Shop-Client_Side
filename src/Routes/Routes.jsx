@@ -4,6 +4,7 @@ import Signup from "../Pages/Signup/Signup";
 import MainLayOut from "../Layouts/MainLayOut";
 import Signin from "../Pages/Signin/Signin";
 import HomePage from "../Pages/Home/HomePage";
+import AddProductPage from "../Pages/AddProductPage/AddProductPage";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -22,6 +23,14 @@ const myCreatedRoutes = createBrowserRouter([
          {
             path: '/signin',
             element: <Signin></Signin>
+         },
+         {
+            path: '/add-product',
+            element: <AddProductPage></AddProductPage>
+         },
+         {
+            path: '/my-cart',
+            element: <AddProductPage></AddProductPage>
          },
       ]
    }

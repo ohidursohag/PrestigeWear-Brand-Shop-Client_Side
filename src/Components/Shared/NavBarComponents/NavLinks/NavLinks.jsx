@@ -22,10 +22,10 @@ const NavLinks = () => {
                   <NavLink className={({ isActive }) => isActive ? 'text-white md:text-[#FF444A] underline ' : ''} to='/'>Home</NavLink>
                </li>
                <li>
-                  <NavLink className={({ isActive }) => isActive ? 'text-white md:text-[#FF444A] underline ' : ''} to='/donation'>Donation</NavLink>
+                  <NavLink className={({ isActive }) => isActive ? 'text-white md:text-[#FF444A] underline ' : ''} to='/add-product'>Add Product</NavLink>
                </li>
                <li>
-                  <NavLink className={({ isActive }) => isActive ? 'text-white md:text-[#FF444A] underline ' : ''} to='/statistics'>Statistics</NavLink>
+                  <NavLink className={({ isActive }) => isActive ? 'text-white md:text-[#FF444A] underline ' : ''} to='/my-cart'>My Cart</NavLink>
                </li>
                <div className="md:hidden">
                   <SignInAndSignoutButtonToggle></SignInAndSignoutButtonToggle>
