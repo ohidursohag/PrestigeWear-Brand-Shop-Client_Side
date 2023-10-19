@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Signup = () => {
    const [showPass, setShowPass] = useState(false);
-
+   const { registerWithEmailPass } = useContext(AuthContext);
+   const navigate = useNavigate()
    const handleSignUp = (e) => {
       e.preventDefault();
       const form = new FormData(e.currentTarget)
@@ -14,7 +17,7 @@ const Signup = () => {
       const email = form.get('email')
       const password = form.get('password')
       const terms = form.get('terms')
-      console.log(email, password, terms, name, photo);
+      // console.log(email, password, terms, name, photo);
 
 
       // Check PasWord Validation
@@ -54,6 +57,31 @@ const Signup = () => {
          })
          return;
       }
+
+
+      // Create a new user account
+      registerWithEmailPass(email, password)
+         .then(result => {
+            console.log(result.user);
+            updateProfile(result.user, { displayName: name, photoURL: photo })
+               .then(result => { console.log(result.user) })
+               .catch(error => { console.error(error.message) })
+
+            Swal.fire({
+               icon: 'success',
+               title: 'Sucessfully Registered',
+            })
+            navigate('/')
+         })
+         .catch(error => {
+            console.error(error.message);
+            Swal.fire({
+               icon: 'error',
+               title: 'You are already registered',
+               text: `Please Login!`,
+            })
+            navigate('/login')
+         })
    }
 
    return (
