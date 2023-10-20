@@ -28,7 +28,7 @@ const SignInAndSignoutButtonToggle = () => {
          }
 
       })
-      
+
    }
    return (
       <div className='text-center md:text-left'>
@@ -36,13 +36,13 @@ const SignInAndSignoutButtonToggle = () => {
             user
                ? <div className=' '>
 
-                  <NavLink className='text-white md:text-[#FF444A] md:border-[3px] md:border-[#FF444A] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}
+                  <NavLink className='text-white md:text-[#C1B17D] md:border-[3px] md:border-[#C1B17D] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}
                      to='' >
                      <span className=' text-xl font-medium ' >Sign Out</span>
                   </NavLink>
                </div>
-               : <NavLink  to={location.pathname === '/signin' ? '/signup' : location.pathname === '/signup' ? '/signin' : '/signin'}>
-                  <span className={` font-medium text-xl border-[3px]  rounded-lg px-2 py-1 ${location.pathname === '/signin' || location.pathname === '/signup' ? 'text-white border-white md:text-[#FF444A]  md:border-[#FF444A]' : 'border-black'} `} >{location.pathname === '/signin' ? 'Sign Up' : location.pathname === '/signup' ? 'Sign In' : 'Sign In'}</span>
+               : <NavLink to={location.pathname === '/signin' ? '/signup' : location.pathname === '/signup' ? '/signin' : '/signin'}>
+                  <span className={` font-medium text-xl border-[3px]  rounded-lg px-2 py-1 ${location.pathname === '/signin' || location.pathname === '/signup' ? 'text-white border-white md:text-[#C1B17D]  md:border-[#C1B17D]' : 'border-black'} `} >{location.pathname === '/signin' ? 'Sign Up' : location.pathname === '/signup' ? 'Sign In' : 'Sign In'}</span>
                </NavLink>
          }
       </div>

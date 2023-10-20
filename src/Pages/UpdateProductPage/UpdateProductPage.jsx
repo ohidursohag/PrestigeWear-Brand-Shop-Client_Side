@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import ProductDataForm from "../../Components/Shared/ProductDataForm/ProductDataForm";
 import { useLoaderData } from 'react-router-dom';
+import BackToHome from "../../Components/BackToHome/BackToHome";
 
 const UpdateProductPage = () => {
    const existingProductData = useLoaderData()
@@ -21,7 +22,7 @@ const UpdateProductPage = () => {
       }
       console.log(UpdatedProductData);
       try {
-         const response = await fetch(`http://localhost:5000/products/${existingProductData._id}`, {
+         const response = await fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/products/${existingProductData._id}`, {
             method: 'PUT',
             headers: {
                "Content-Type": "application/json",
@@ -53,9 +54,10 @@ const UpdateProductPage = () => {
    }
    return (
       <div>
-         <div className="px-2">
+         <div className="px-2 container mx-auto">
+            <BackToHome></BackToHome>
             <h1 className="text-center my-10 text-4xl font-bold">Update Product</h1>
-            <div className="container mx-auto mt-10 bg-[#FF444A] py-10 ">
+            <div className=" mt-10 bg-[#C1B17D] py-10 ">
                <form onSubmit={handleUpdateProduct}>
                   <ProductDataForm buttonName={'Update'} existingProductData={existingProductData}></ProductDataForm>
                </form>

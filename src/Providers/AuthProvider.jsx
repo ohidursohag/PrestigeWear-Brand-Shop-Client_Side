@@ -3,11 +3,15 @@ import PropTypes from "prop-types";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "../Firebase/Firebase.config";
 export const AuthContext = createContext(null);
+
+
 const AuthProvider = ({ children }) => {
    const [user, setUser] = useState(null);
    const [loading, setLoading] = useState(true);
    const [products, setProducts] = useState([])
    const googleProvider = new GoogleAuthProvider()
+
+   
    // create User with email and password
    const registerWithEmailPass = (email, password) => {
       setLoading(true);
@@ -34,7 +38,6 @@ const AuthProvider = ({ children }) => {
    // get currently logged in user
    useEffect(() => {
       const unSubscribe = onAuthStateChanged(auth, currentUser => {
-         // console.log(currentUser);
          setUser(currentUser)
          setLoading(false);
       })
@@ -44,7 +47,7 @@ const AuthProvider = ({ children }) => {
 
 
    useEffect(() => {
-      fetch('http://localhost:5000/products')
+      fetch('https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/products')
          .then((response) => response.json())
          .then(data => setProducts(data))
          .catch((error) => console.error(error))

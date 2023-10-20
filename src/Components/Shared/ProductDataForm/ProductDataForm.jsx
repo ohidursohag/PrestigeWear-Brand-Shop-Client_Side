@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 const ProductDataForm = ({ buttonName, existingProductData } ) => {
    const { productName, productImage, productType, productRatings, brandName, productPrice, shortDescription } = existingProductData || {};
-   // console.log(existingProductData);
+  
    return (
       <div className="w-full  ">
          <div className="w-[90%] mx-auto">
@@ -51,7 +51,7 @@ const ProductDataForm = ({ buttonName, existingProductData } ) => {
             </div>
 
             <div className="mt-7 font-Rancho ">
-               <input type="submit" name="submit" id="submit" value={buttonName} className=" cursor-pointer h-16 w-full mt-1  bg-[#D2B48C] px-4 text-[#331A15] border-[3px] border-[#331A15] text-2xl outline-none" />
+               <input type="submit" name="submit" id="submit" value={buttonName} className=" cursor-pointer h-16 w-full mt-1  bg-[#D2B48C] px-4 text-[#8f601e] font-bold border-[3px] border-[#fbcd28] text-2xl outline-none" />
             </div>
          </div>
       </div>

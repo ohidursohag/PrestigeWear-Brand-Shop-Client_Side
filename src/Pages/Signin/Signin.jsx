@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ const Signin = () => {
    const [showPass, setShowPass] = useState(false);
    const { loginWithEmailPass, googleLogin } = useContext(AuthContext);
    const navigate = useNavigate()
+   const loc = useLocation();
    const handleLogIn = e => {
       e.preventDefault();
       const form = new FormData(e.currentTarget);
@@ -24,7 +25,7 @@ const Signin = () => {
                title: 'Sucessfully logged in',
                text: `Welcome!`,
             })
-            navigate('/')
+            navigate(loc?.state ? loc.state : '/')
          })
          .catch(error => {
             console.error(error.message);
@@ -46,7 +47,7 @@ const Signin = () => {
                icon: 'success',
                title: ' Signin successfull',
             })
-            navigate('/')
+            navigate(loc?.state ? loc.state : '/')
          })
          .catch(error => { console.error(error.message) })
    }

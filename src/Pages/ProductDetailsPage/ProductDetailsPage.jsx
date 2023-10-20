@@ -11,7 +11,7 @@ const ProductDetailsPage = () => {
    console.log(productDataWithoutId);
    const handleCartAddToAddtoCartData = async () => {
       try {
-         const response = await fetch('http://localhost:5000/cart-data', {
+         const response = await fetch('https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/cart-data', {
             method: 'POST',
             headers: {
                "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const ProductDetailsPage = () => {
                showConfirmButton: false,
                timer: 1500
             })
-           
+
          }
       } catch (error) {
          console.error(error)
@@ -80,13 +80,13 @@ const ProductDetailsPage = () => {
                <div className="flex gap-10">
 
 
-                     <button onClick={handleCartAddToAddtoCartData}
-                        className="block w-full select-none rounded-lg bg-sky-500 py-3.5 px-7 text-center align-middle font-sans text-lg font-bold  text-white shadow-md shadow-sky-500/50 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none "
-                        type="button"
-                        data-ripple-light="true"
-                     >
-                        Add to Cart
-                     </button>
+                  <button onClick={handleCartAddToAddtoCartData}
+                     className="block w-full select-none rounded-lg bg-sky-500 py-3.5 px-7 text-center align-middle font-sans text-lg font-bold  text-white shadow-md shadow-sky-500/50 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none "
+                     type="button"
+                     data-ripple-light="true"
+                  >
+                     Add to Cart
+                  </button>
                </div>
             </div>
          </div>

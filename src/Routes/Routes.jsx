@@ -9,6 +9,7 @@ import MyCartPage from "../Pages/MyCartPage/MyCartPage";
 import BrandProductsPage from "../Pages/BrandProductsPage/BrandProductsPage";
 import ProductDetailsPage from "../Pages/ProductDetailsPage/ProductDetailsPage";
 import UpdateProductPage from "../Pages/UpdateProductPage/UpdateProductPage";
+import PrivateRoute from "./PrivateRoute";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -19,17 +20,19 @@ const myCreatedRoutes = createBrowserRouter([
          {
             path: '/',
             element: <HomePage></HomePage>,
-            loader: () => fetch('http://localhost:5000/brands')
+            loader: () => fetch('https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/brands')
          },
          {
             path: '/brands/:id',
             element: <BrandProductsPage></BrandProductsPage>,
-            loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
+            loader: ({ params }) => fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/brands/${params.id}`)
          },
          {
             path: '/products/:id',
-            element: <ProductDetailsPage></ProductDetailsPage>,
-            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+            element: <PrivateRoute>
+               <ProductDetailsPage></ProductDetailsPage>
+            </PrivateRoute>,
+            loader: ({ params }) => fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/products/${params.id}`)
          },
 
          {
@@ -42,17 +45,21 @@ const myCreatedRoutes = createBrowserRouter([
          },
          {
             path: '/add-product',
-            element: <AddProductPage></AddProductPage>
+            element: <PrivateRoute>
+               <AddProductPage></AddProductPage>
+            </PrivateRoute>
          },
          {
             path: '/update-product/:id',
-            element: <UpdateProductPage></UpdateProductPage>,
-            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+            element: <PrivateRoute>
+               <UpdateProductPage></UpdateProductPage>
+            </PrivateRoute>,
+            loader: ({ params }) => fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/products/${params.id}`)
          },
          {
             path: '/my-cart',
             element: <MyCartPage></MyCartPage>,
-            loader: () => fetch(`http://localhost:5000/cart-data`)
+            loader: () => fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/cart-data`)
          },
       ]
    }

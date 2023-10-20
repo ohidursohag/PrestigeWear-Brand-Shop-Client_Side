@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { MdDelete } from 'react-icons/md';
 import Swal from 'sweetalert2';
 const CartItemCard = ({ cartItem, handleRemoveDeletedItem }) => {
-   const {_id, brandName, productImage, productName, productPrice } = cartItem || {};
+   const { _id, brandName, productImage, productName, productPrice } = cartItem || {};
 
    const handleDeleteCartItem = async (id) => {
       Swal.fire({
@@ -16,7 +16,7 @@ const CartItemCard = ({ cartItem, handleRemoveDeletedItem }) => {
       }).then(async (result) => {
          if (result.isConfirmed) {
             try {
-               const response = await fetch(`http://localhost:5000/cart-data/${id}`, {
+               const response = await fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/cart-data/${id}`, {
                   method: 'DELETE',
                })
                const result = await response.json();
@@ -30,7 +30,7 @@ const CartItemCard = ({ cartItem, handleRemoveDeletedItem }) => {
                      showConfirmButton: false,
                      timer: 1500
                   })
-                  
+
                }
             } catch (error) {
                console.error(error);
