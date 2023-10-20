@@ -51,7 +51,8 @@ const myCreatedRoutes = createBrowserRouter([
          },
          {
             path: '/my-cart',
-            element: <MyCartPage></MyCartPage>
+            element: <MyCartPage></MyCartPage>,
+            loader: () => fetch(`http://localhost:5000/cart-data`)
          },
       ]
    }
