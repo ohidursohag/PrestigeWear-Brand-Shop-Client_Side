@@ -13,23 +13,24 @@ const myCreatedRoutes = createBrowserRouter([
    {
       path: '/',
       element: <MainLayOut></MainLayOut>,
-      errorElement:<ErrorHandlePage></ErrorHandlePage>,
+      errorElement: <ErrorHandlePage></ErrorHandlePage>,
       children: [
          {
             path: '/',
             element: <HomePage></HomePage>,
-            loader: () => fetch('http://localhost:5000/brands')
+            loader: () => fetch('https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/brands')
          },
          {
             path: '/brands/:id',
             element: <BrandProductsPage></BrandProductsPage>,
-            loader: ({params}) => fetch(`http://localhost:5000/brands/${params.id}`)
+            loader: ({ params }) => fetch(`https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/brands/${params.id}`)
          },
          {
             path: '/products/:id',
             element: <ProductDetailsPage></ProductDetailsPage>,
-            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+            loader: ({ params }) => fetch(`https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/products/${params.id}`)
          },
+
          {
             path: '/signup',
             element: <Signup></Signup>

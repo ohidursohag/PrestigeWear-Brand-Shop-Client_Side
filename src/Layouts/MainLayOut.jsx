@@ -8,7 +8,7 @@ const MainLayOut = () => {
    return (
       <div>
          <NavBar></NavBar>
-         <div className="min-h-[360px]">
+         <div className="min-h-[calc(100vh-105px)]">
             {
                navigation.state === 'loading' ? <LoadingAnimation /> : <Outlet></Outlet>
             }
