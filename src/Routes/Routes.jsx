@@ -7,6 +7,7 @@ import HomePage from "../Pages/Home/HomePage";
 import AddProductPage from "../Pages/AddProductPage/AddProductPage";
 import MyCartPage from "../Pages/MyCartPage/MyCartPage";
 import BrandProductsPage from "../Pages/BrandProductsPage/BrandProductsPage";
+import ProductDetailsPage from "../Pages/ProductDetailsPage/ProductDetailsPage";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -23,6 +24,11 @@ const myCreatedRoutes = createBrowserRouter([
             path: '/brands/:id',
             element: <BrandProductsPage></BrandProductsPage>,
             loader: ({params}) => fetch(`http://localhost:5000/brands/${params.id}`)
+         },
+         {
+            path: '/products/:id',
+            element: <ProductDetailsPage></ProductDetailsPage>,
+            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
          },
          {
             path: '/signup',

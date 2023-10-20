@@ -24,11 +24,19 @@ const ProductDataForm = () => {
                </div>
                <div className="md:w-[50%] space-y-6">
                   <div>
-                     <label htmlFor="brandName" className="text-xl font-medium ">Brand Name</label>
-                     <input type="text" name="brandName" defaultValue={'brandName'} id="brandName" placeholder="Enter Brand Name" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
+                     <label htmlFor="brandName" className="text-xl font-medium ">Brand Name</label>                  
+                     <select className=" h-14 w-full mt-1  bg-white px-4  outline-none" name="brandName" id="brandName">
+                        <option  selected>Brand Name</option>
+                        <option value="Nike" >Nike</option>
+                        <option value="Adidas">Adidas</option>
+                        <option value="Gucci">Gucci</option>
+                        <option value="Zara">Zara</option>
+                        <option value="H&M">H&M</option>
+                        <option value="Levi's">{"Levi's"}</option>
+                     </select>
                   </div>
-                  
-                  
+
+
                   <div>
                      <label htmlFor="productImage" className="text-xl font-medium ">Product Image</label>
                      <input type="url" name="productImage" defaultValue={'productImage'} id="productImage" placeholder="Enter Product Image URL" className=" h-14 w-full mt-1  bg-white px-4  outline-none" />
@@ -39,7 +47,7 @@ const ProductDataForm = () => {
                   </div>
                </div>
             </div>
-            
+
             <div className="mt-7 font-Rancho ">
                <input type="submit" name="submit" id="submit" value={'Add Product'} className=" cursor-pointer h-16 w-full mt-1  bg-[#D2B48C] px-4 text-[#331A15] border-[3px] border-[#331A15] text-2xl outline-none" />
             </div>

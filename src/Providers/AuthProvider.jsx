@@ -6,6 +6,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
    const [user, setUser] = useState(null);
    const [loading, setLoading] = useState(true);
+   const [products, setProducts] = useState([])
    const googleProvider = new GoogleAuthProvider()
    // create User with email and password
    const registerWithEmailPass = (email, password) => {
@@ -41,6 +42,14 @@ const AuthProvider = ({children}) => {
 
    }, [])
 
+
+   useEffect(() => {
+      fetch('http://localhost:5000/products')
+         .then((response) => response.json())
+         .then(data => setProducts(data))
+         .catch((error) => console.error(error))
+   }, [])
+
    const authInfo = {
       user,
       registerWithEmailPass,
@@ -48,6 +57,7 @@ const AuthProvider = ({children}) => {
       googleLogin,
       logOut,
       loading,
+      products,
    }
    return (
       <AuthContext.Provider value={authInfo}>
