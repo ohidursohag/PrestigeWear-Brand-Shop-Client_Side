@@ -1,12 +1,39 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Rating from "react-rating";
 import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai';
+import Swal from "sweetalert2";
 const ProductDetailsPage = () => {
-
    const product = useLoaderData()
    const { brandName, productImage, productName, productPrice, productRatings, productType, shortDescription } = product || {};
 
-   console.log(product);
+   // Remove _id property from   product object
+   const productDataWithoutId = { brandName, productImage, productName, productPrice, productRatings, productType, shortDescription }
+   console.log(productDataWithoutId);
+   const handleCartAddToAddtoCartData = async () => {
+      try {
+         const response = await fetch('http://localhost:5000/cart-data', {
+            method: 'POST',
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify(productDataWithoutId)
+         })
+         const result = await response.json();
+         console.log(result);
+         if (result) {
+            Swal.fire({
+               position: 'top',
+               icon: 'success',
+               title: 'Product successfully added to cart',
+               showConfirmButton: false,
+               timer: 1500
+            })
+           
+         }
+      } catch (error) {
+         console.error(error)
+      }
+   }
    return (
 
       <div className="container mx-auto px-3 py-[100px] min-h-[calc(100vh-105px)] flex justify-center items-center">
@@ -52,15 +79,14 @@ const ProductDetailsPage = () => {
                </div>
                <div className="flex gap-10">
 
-                  <Link className="inline-block" to="/my-cart">
-                     <button
+
+                     <button onClick={handleCartAddToAddtoCartData}
                         className="block w-full select-none rounded-lg bg-sky-500 py-3.5 px-7 text-center align-middle font-sans text-lg font-bold  text-white shadow-md shadow-sky-500/50 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none "
                         type="button"
                         data-ripple-light="true"
                      >
                         Add to Cart
                      </button>
-                  </Link>
                </div>
             </div>
          </div>

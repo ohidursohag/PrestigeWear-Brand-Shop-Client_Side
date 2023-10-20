@@ -33,7 +33,7 @@ const AddProductPage = () => {
                Swal.fire({
                   position: 'top',
                   icon: 'success',
-                  title: 'Coffee successfully added',
+                  title: 'Product successfully added',
                   showConfirmButton: false,
                   timer: 1500
                })
