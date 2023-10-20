@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ProductCard from "../../Components/BrandProductsPageComponents/ProductCard";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import BackToHome from "../../Components/BackToHome/BackToHome";
 
 const BrandProductsPage = () => {
    const { products } = useContext(AuthContext)
@@ -14,6 +15,7 @@ const BrandProductsPage = () => {
 
    return (
       <div className="container mx-auto">
+         <BackToHome></BackToHome>
          <div className="px-3 sm:px-5 my-[100px] flex gap-5 flex-wrap justify-center  items-center">
             {
                FilterBrand.length

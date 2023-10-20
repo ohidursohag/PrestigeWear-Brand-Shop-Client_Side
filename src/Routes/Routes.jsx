@@ -8,6 +8,7 @@ import AddProductPage from "../Pages/AddProductPage/AddProductPage";
 import MyCartPage from "../Pages/MyCartPage/MyCartPage";
 import BrandProductsPage from "../Pages/BrandProductsPage/BrandProductsPage";
 import ProductDetailsPage from "../Pages/ProductDetailsPage/ProductDetailsPage";
+import UpdateProductPage from "../Pages/UpdateProductPage/UpdateProductPage";
 
 const myCreatedRoutes = createBrowserRouter([
    {
@@ -18,17 +19,17 @@ const myCreatedRoutes = createBrowserRouter([
          {
             path: '/',
             element: <HomePage></HomePage>,
-            loader: () => fetch('https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/brands')
+            loader: () => fetch('http://localhost:5000/brands')
          },
          {
             path: '/brands/:id',
             element: <BrandProductsPage></BrandProductsPage>,
-            loader: ({ params }) => fetch(`https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/brands/${params.id}`)
+            loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
          },
          {
             path: '/products/:id',
             element: <ProductDetailsPage></ProductDetailsPage>,
-            loader: ({ params }) => fetch(`https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/products/${params.id}`)
+            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
          },
 
          {
@@ -42,6 +43,11 @@ const myCreatedRoutes = createBrowserRouter([
          {
             path: '/add-product',
             element: <AddProductPage></AddProductPage>
+         },
+         {
+            path: '/update-product/:id',
+            element: <UpdateProductPage></UpdateProductPage>,
+            loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
          },
          {
             path: '/my-cart',

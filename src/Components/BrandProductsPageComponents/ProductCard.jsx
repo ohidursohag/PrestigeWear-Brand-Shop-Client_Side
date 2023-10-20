@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => {
                         Details
                      </button>
                   </Link>
-                  <Link className="inline-block" href="#">
+                  <Link className="inline-block" to={`/update-product/${_id}`}>
                      <button
                         className="block w-full select-none rounded-lg bg-sky-500 py-3.5 px-7 text-center align-middle font-sans text-lg font-bold  text-white shadow-md shadow-sky-500/50 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none "
                         type="button"

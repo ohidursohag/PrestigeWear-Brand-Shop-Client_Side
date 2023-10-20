@@ -20,7 +20,7 @@ const AddProductPage = () => {
 
       if (productName && productImage && productType && productRatings && brandName && productPrice && shortDescription) {
          try {
-            const response = await fetch('https://prestige-wear-server-f7a4g5d6k-ohidursohag.vercel.app/products', {
+            const response = await fetch('http://localhost:5000/products', {
                method: 'POST',
                headers: {
                   "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const AddProductPage = () => {
          <h1 className="text-center my-10 text-4xl font-bold">Add New Product</h1>
          <div className="container mx-auto mt-10 bg-[#FF444A] py-10 ">
             <form onSubmit={handleAddNewProduct}>
-               <ProductDataForm></ProductDataForm>
+               <ProductDataForm buttonName={'Add Product'}></ProductDataForm>
             </form>
          </div>
       </div>

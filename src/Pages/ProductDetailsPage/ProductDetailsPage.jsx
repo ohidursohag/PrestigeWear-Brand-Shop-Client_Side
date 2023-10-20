@@ -4,42 +4,49 @@ import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai';
 const ProductDetailsPage = () => {
 
    const product = useLoaderData()
-   const { brandName, productImage, productName, productPrice, productRatings, productType } = product || {};
+   const { brandName, productImage, productName, productPrice, productRatings, productType, shortDescription } = product || {};
 
    console.log(product);
    return (
 
-      <div className="Container mx-auto">
-         <div className=" sm:flex w-full max-w-[720px] xl:max-w-[600px] 2xl:max-w-[720px] rounded-xl bg-white bg-clip-border text-gray-700 shadow-md ">
-            <figure className=" sm:w-2/5  bg-black  rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none  bg-clip-border text-gray-700">
+      <div className="container mx-auto px-3 py-[100px] min-h-[calc(100vh-105px)] flex justify-center items-center">
+         <div className=" sm:flex w-full  sm:h-[400px] lg:h-[500px] xl:h-[600px] rounded-xl bg-white bg-clip-border text-gray-700 shadow-md  ">
+            <figure className=" sm:w-1/2 h-[300px] sm:h-full bg-black  rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none  bg-clip-border text-gray-700">
                <img
                   src={productImage}
                   alt="image"
                   className="h-full w-full rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none object-cover object-center"
                />
             </figure>
-            <div className="p-6 flex-grow">
+            <div className="p-6 flex-grow flex flex-col justify-center">
                <div>
-                  <h3 className="mb-1 text-2xl font-semibold ">
+                  <h3 className="mb-2 text-2xl md:text-3xl lg:text-4xl font-semibold ">
                      {productName}
                   </h3>
-                  <h3 className=" text-lg font-semibold   antialiased">
+                  <h3 className=" text-lg xl:text-xl font-semibold   antialiased">
                      Brand: <span className="font-normal">{brandName}</span>
                   </h3>
-                  <h3 className="mb-4 text-lg font-semibold  antialiased">
+                  <h3 className="mb-4 text-lg xl:text-xl font-semibold  antialiased">
                      Type: <span className="font-normal">{productType}</span>
                   </h3>
-                  <div className="flex items-center gap-2">
-                     <Rating className="text-2xl text-amber-400"
+
+                  <div className="my-3">
+                     <p className="max-w-[400px] xl:text-xl">
+                        <span className="mb-4 text-lg xl:text-xl font-semibold  antialiased">Description:</span> <br />
+                        {shortDescription}
+                     </p>
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                     <Rating className="text-2xl lg:text-3xl text-amber-400"
                         emptySymbol={<AiOutlineStar></AiOutlineStar>}
                         fullSymbol={<AiTwotoneStar></AiTwotoneStar>}
                         fractions={2}
                         readonly={true}
                         initialRating={productRatings}
                      />
-                     <p className="text-xl font-semibold">{productRatings}</p>
+                     <p className="text-xl lg:text-3xl font-semibold">{productRatings}</p>
                   </div>
-                  <h3 className="mb-4 block  text-2xl font-semibold    antialiased">
+                  <h3 className=" mb-4 lg:mb-6 block  text-2xl font-semibold    antialiased">
                      Price: $<span className="font-normal">{productPrice}</span>
                   </h3>
                </div>
