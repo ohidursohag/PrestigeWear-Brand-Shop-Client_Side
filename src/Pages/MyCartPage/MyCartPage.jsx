@@ -15,13 +15,15 @@ const MyCartPage = () => {
    
    
    return (
-      <div className="container mx-auto px-2 sm:px-4">
-         <BackToHome></BackToHome>
-         <h1 className="text-center text-4xl font-bold my-10 ">My Cart</h1>
-         <div className="space-y-8 sm:space-y-5 max-w-[700px] mx-auto">
-            {
-               currentCartItems.map((cartItem) => <CartItemCard key={cartItem._id} cartItem={cartItem} handleRemoveDeletedItem={handleRemoveDeletedItem}></CartItemCard>)
-            }
+      <div className="dark:bg-gray-900 ">
+         <div className="container mx-auto px-2 sm:px-4">
+            <BackToHome></BackToHome>
+            <h1 className="text-center text-4xl font-bold my-10 dark:text-white">My Cart</h1>
+            <div className="space-y-8 sm:space-y-5 max-w-[700px] mx-auto">
+               {
+                  currentCartItems.map((cartItem) => <CartItemCard key={cartItem._id} cartItem={cartItem} handleRemoveDeletedItem={handleRemoveDeletedItem}></CartItemCard>)
+               }
+            </div>
          </div>
       </div>
    );

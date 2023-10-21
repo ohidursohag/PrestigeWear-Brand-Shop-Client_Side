@@ -5,13 +5,14 @@ import BannerSlider from "../../Components/HomePageComponents/BannerSlider/Banne
 const HomePage = () => {
    const brands = useLoaderData()
    return (
-      <div>
+      <div className="dark:bg-gray-900">
          <div>
             <BannerSlider></BannerSlider>
          </div>
+         
          <div className="container mx-auto">
             
-            <div className="my-10 flex justify-center gap-10 sm:gap-8 md:gap-10  px-1 flex-wrap">
+            <div className=" py-[100px] flex justify-center gap-10 sm:gap-8 md:gap-10  px-1 flex-wrap">
                {
                   brands.map(brand => <BrandsNameCards key={brand._id} brand={brand}></BrandsNameCards>)
                }

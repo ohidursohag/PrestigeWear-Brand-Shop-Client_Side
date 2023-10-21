@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 const ProductCard = ({ product }) => {
 
    const {_id, brandName, productImage, productName, productPrice, productRatings, productType } = product || {};
-   console.log(product);
+   // console.log(product);
    return (
-      <div>
-         <div className=" sm:flex w-full max-w-[720px] xl:max-w-[600px] 2xl:max-w-[720px] rounded-xl bg-white bg-clip-border text-gray-700 shadow-md ">
-            <figure className=" sm:w-2/5  bg-black  rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none  bg-clip-border text-gray-700">
+      <div className="">
+         <div className="dark:bg-white sm:flex w-full max-w-[720px] xl:max-w-[600px] 2xl:max-w-[720px] rounded-xl bg-white bg-clip-border text-gray-700 shadow-md ">
+            <figure className=" bg-black dark:bg-gray-600 sm:w-2/5 rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none  bg-clip-border text-gray-700">
                <img
                   src={productImage}
                   alt="image"

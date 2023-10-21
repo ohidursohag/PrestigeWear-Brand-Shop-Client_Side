@@ -53,13 +53,15 @@ const AddProductPage = () => {
    }
 
    return (
-      <div className="px-2 container mx-auto ">
-         <BackToHome></BackToHome>
-         <h1 className="text-center my-10 text-4xl font-bold">Add New Product</h1>
-         <div className="mt-10 bg-[#C1B17D] py-10 ">
-            <form onSubmit={handleAddNewProduct}>
-               <ProductDataForm buttonName={'Add Product'}></ProductDataForm>
-            </form>
+      <div className="dark:bg-gray-900 py-[100px]">
+         <div className="px-2 container mx-auto ">
+            <BackToHome></BackToHome>
+            <h1 className="text-center my-10 text-4xl font-bold dark:text-white">Add New Product</h1>
+            <div className=" bg-[#C1B17D] py-10 ">
+               <form onSubmit={handleAddNewProduct}>
+                  <ProductDataForm buttonName={'Add Product'}></ProductDataForm>
+               </form>
+            </div>
          </div>
       </div>
    );

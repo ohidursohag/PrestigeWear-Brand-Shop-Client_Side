@@ -7,7 +7,7 @@ import FooterBottom from "../FooterBottom/FooterBottom";
 
 const Footer = () => {
    return (
-      <footer className="bg-[#1A1919] mt-[100px] text-white">
+      <footer className="bg-[#1A1919]  text-white">
          <div className="container px-5 md:px-10 pt-16 mx-auto ">
             <div className="flex md:items-center  md:flex-row   flex-col">
                <LogoAndSocialMedia></LogoAndSocialMedia>
