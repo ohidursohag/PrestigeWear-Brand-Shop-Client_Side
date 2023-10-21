@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
    const [products, setProducts] = useState([])
    const googleProvider = new GoogleAuthProvider()
 
-   
+
    // create User with email and password
    const registerWithEmailPass = (email, password) => {
       setLoading(true);
@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
 
 
    useEffect(() => {
-      fetch('https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/products')
+      fetch('http://localhost:5000/products')
          .then((response) => response.json())
          .then(data => setProducts(data))
          .catch((error) => console.error(error))

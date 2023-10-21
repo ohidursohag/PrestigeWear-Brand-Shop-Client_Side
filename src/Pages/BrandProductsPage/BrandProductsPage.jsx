@@ -21,13 +21,13 @@ const BrandProductsPage = () => {
                FilterBrand.length
                   ? FilterBrand.map((product) => <ProductCard key={product._id} product={product}></ProductCard>)
                   : <div className=" w-max  text-5xl text-center space-y-5 h-[calc(100vh-300px)] flex flex-col gap-5  justify-center  items-center ">
-                     <h1 className="text-orange-500 font-bold">Opps!!</h1>
+                     <h1 className="text-[#C1B17D] font-bold">Opps!!</h1>
                      <p className="text-3xl font-semibold">No product found</p>
                   </div>
             }
 
          </div>
-         
+
       </div>
    );
 };

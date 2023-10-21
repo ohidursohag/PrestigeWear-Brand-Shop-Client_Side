@@ -2,6 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../../Providers/AuthProvider';
+import userLogo from '../../../../assets/logo/user.png'
 const SignInAndSignoutButtonToggle = () => {
    const { user, logOut } = useContext(AuthContext)
    const location = useLocation()
@@ -34,8 +35,14 @@ const SignInAndSignoutButtonToggle = () => {
       <div className='text-center md:text-left'>
          {
             user
-               ? <div className=' '>
+               ? <div className=' flex gap-2 items-center '>
 
+                  <div className='flex flex-col items-center'>
+                     <figure className='w-10 h-10 border border-gray-400 rounded-full'>
+                        <img className='w-10 rounded-full' src={user?.photoURL || userLogo} alt="" />
+                     </figure>
+                     <p className='text-gray-800'>{user?.displayName.slice(0, 16) || 'user name'}</p>
+                  </div>
                   <NavLink className='text-white md:text-[#C1B17D] md:border-[3px] md:border-[#C1B17D] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}
                      to='' >
                      <span className=' text-xl font-medium ' >Sign Out</span>

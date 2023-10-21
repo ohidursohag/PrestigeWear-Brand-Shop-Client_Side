@@ -101,7 +101,7 @@ const Signup = () => {
    return (
       <div>
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center mb-10">
-            <div className="relative w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
+            <div className="relative w-[350px] sm:w-[450px]  rounded-3xl bg-[#C1B17D]">
                <div className="py-10 text-center text-3xl text-white font-bold">Login Your Account</div>
                <div className=" pb-10 px-5 sm:px-10 flex  w-full flex-col rounded-3xl">
                   <form onSubmit={handleSignUp} className="text-center">

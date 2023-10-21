@@ -34,7 +34,7 @@ const Signin = () => {
                title: 'Ivalid Email or Password',
                text: `Try Again!`,
             })
-         })    
+         })
 
    }
 
@@ -53,9 +53,9 @@ const Signin = () => {
    }
 
    return (
-      <div>
+      <div className="">
          <div className="flex min-h-[calc(100vh-100px)] items-center justify-center ">
-            <div className="relative  w-[350px] sm:w-[450px]  rounded-3xl bg-orange-500">
+            <div className="  w-[350px] sm:w-[450px]  rounded-3xl bg-[#C1B17D]">
                <div className="py-10 text-center text-3xl text-white font-bold">Signin on Your Account</div>
                <div className=" pb-16 px-5 sm:px-10 flex  w-full flex-col rounded-3xl ">
 
@@ -78,7 +78,7 @@ const Signin = () => {
                      </div>
 
 
-                     <button className="h-14 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Login</button>
+                     <button className="h-14 w-full rounded-3xl bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800">Sign In</button>
 
                      <div className="space-y-3">
 

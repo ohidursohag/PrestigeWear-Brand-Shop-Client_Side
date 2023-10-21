@@ -7,7 +7,7 @@ const NavLinks = () => {
    const [isShowNavLinks, setIsShowNavLinks] = useState(false)
 
    return (
-      <div className="md:w-[60%] ">
+      <div className="md:w-[60%] z-50">
          <div className="relative">
             <button onClick={() => setIsShowNavLinks(!isShowNavLinks)}
                className="text-3xl text-[#C1B17D] font-bold md:hidden">

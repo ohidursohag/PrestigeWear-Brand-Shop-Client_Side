@@ -22,7 +22,7 @@ const UpdateProductPage = () => {
       }
       console.log(UpdatedProductData);
       try {
-         const response = await fetch(`https://prestige-wear-server-k269ec9mx-ohidursohag.vercel.app/products/${existingProductData._id}`, {
+         const response = await fetch(`http://localhost:5000/products/${existingProductData._id}`, {
             method: 'PUT',
             headers: {
                "Content-Type": "application/json",
