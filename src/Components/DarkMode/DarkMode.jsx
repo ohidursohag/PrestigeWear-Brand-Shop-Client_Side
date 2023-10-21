@@ -44,11 +44,11 @@ const DarkMode = () => {
         <div>
             <button onClick={handleThemeSwitch} className=" text-xl bg-accent text-white rounded-full w-12 h-12 flex justify-center items-center">
                 {theme === 'light'
-                    ? <figure className='bg-[#C1B17D] p-1 rounded-full'>
-                        <img className='w-[30px]' src={Dark} alt="" />
+                    ? <figure className=' w-[30px] bg-[#C1B17D] p-1 rounded-full'>
+                        <img className='' src={Dark} alt="" />
                     </figure>
-                    : <figure className='bg-[#C1B17D] p-1 rounded-full'>
-                        <img className='w-[30px]' src={Light} alt="" />
+                    : <figure className='w-[30px] bg-[#C1B17D] p-1 rounded-full'>
+                        <img className='' src={Light} alt="" />
                     </figure>
                 }
             </button>

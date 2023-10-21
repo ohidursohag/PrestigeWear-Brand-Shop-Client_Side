@@ -35,13 +35,13 @@ const SignInAndSignoutButtonToggle = () => {
       <div className='text-center md:text-left'>
          {
             user
-               ? <div className=' flex gap-2 items-center '>
+               ? <div className=' flex gap-5 items-center '>
 
                   <div className='flex flex-col items-center'>
                      <figure className='w-10 h-10 border border-gray-400 rounded-full'>
                         <img className='w-10 rounded-full' src={user?.photoURL || userLogo} alt="" />
                      </figure>
-                     <p className='text-gray-800'>{user?.displayName.slice(0, 16) || 'user name'}</p>
+                     <p className='text-[#C1B17D]'>{user?.displayName.slice(0, 10) || 'user name'}</p>
                   </div>
                   <NavLink className='text-white md:text-[#C1B17D] md:border-[3px] md:border-[#C1B17D] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}
                      to='' >
