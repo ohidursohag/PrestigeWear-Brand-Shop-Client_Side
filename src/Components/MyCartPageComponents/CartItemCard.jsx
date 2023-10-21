@@ -16,7 +16,7 @@ const CartItemCard = ({ cartItem, handleRemoveDeletedItem }) => {
       }).then(async (result) => {
          if (result.isConfirmed) {
             try {
-               const response = await fetch(`http://localhost:5000/cart-data/${id}`, {
+               const response = await fetch(`https://prestige-wear-server.vercel.app/cart-data/${id}`, {
                   method: 'DELETE',
                })
                const result = await response.json();

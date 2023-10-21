@@ -15,7 +15,7 @@ const MyCartPage = () => {
    
    
    return (
-      <div className="dark:bg-gray-900 ">
+      <div className="dark:bg-gray-900 py-[100px]">
          <div className="container mx-auto px-2 sm:px-4">
             <BackToHome></BackToHome>
             <h1 className="text-center text-4xl font-bold my-10 dark:text-white">My Cart</h1>

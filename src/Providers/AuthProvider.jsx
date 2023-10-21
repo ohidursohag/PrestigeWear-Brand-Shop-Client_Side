@@ -47,7 +47,7 @@ const AuthProvider = ({ children }) => {
 
 
    useEffect(() => {
-      fetch('http://localhost:5000/products')
+      fetch('https://prestige-wear-server.vercel.app/products')
          .then((response) => response.json())
          .then(data => setProducts(data))
          .catch((error) => console.error(error))

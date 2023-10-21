@@ -8,7 +8,7 @@ const MainLayOut = () => {
    return (
       <div>
          <NavBar></NavBar>
-         <div className="py-[100px] dark:bg-gray-900">
+         <div className=" dark:bg-gray-900">
             {
                navigation.state === 'loading' ? <LoadingAnimation /> : <Outlet></Outlet>
             }

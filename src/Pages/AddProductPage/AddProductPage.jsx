@@ -21,7 +21,7 @@ const AddProductPage = () => {
 
       if (productName && productImage && productType && productRatings && brandName && productPrice && shortDescription) {
          try {
-            const response = await fetch('http://localhost:5000/products', {
+            const response = await fetch('https://prestige-wear-server.vercel.app/products', {
                method: 'POST',
                headers: {
                   "Content-Type": "application/json",

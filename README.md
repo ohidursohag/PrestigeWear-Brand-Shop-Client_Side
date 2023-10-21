@@ -1,8 +1,18 @@
-# React + Vite
+# PrestigeWear
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Website](https://b8a8-donation-campaign-ohidursohag.vercel.app/)
 
-Currently, two official plugins are available:
+# Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. User authentication system for signUp and SignIn
+
+### 2. Adding Product and store Product info to Database 
+
+### 3. Updating Product info and store Product info to Database 
+
+### 4. Add Product to cart and remove product from cart 
+
+### 5. Dark theme feature 
+
+
+
