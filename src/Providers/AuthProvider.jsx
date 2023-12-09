@@ -8,7 +8,8 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
    const [user, setUser] = useState(null);
    const [loading, setLoading] = useState(true);
-   const [products, setProducts] = useState([])
+   const [products, setProducts] = useState([]);
+   // const [AdvertiseData, setAdvertiseData] = useState()
    const googleProvider = new GoogleAuthProvider()
 
 
@@ -24,7 +25,7 @@ const AuthProvider = ({ children }) => {
       return signInWithEmailAndPassword(auth, email, password);
    }
 
-   // Signup/Login user with Google account
+   // Signup/login user with Google account
    const googleLogin = () => {
       return signInWithPopup(auth, googleProvider)
    }
@@ -45,13 +46,21 @@ const AuthProvider = ({ children }) => {
 
    }, [])
 
-
+   // Get Product Data 
    useEffect(() => {
       fetch('https://prestige-wear-server.vercel.app/products')
          .then((response) => response.json())
          .then(data => setProducts(data))
          .catch((error) => console.error(error))
    }, [])
+
+   // Get Advertisement Data
+   // useEffect(() => {
+   //    fetch('https://prestige-wear-server.vercel.app/adimg')
+   //       .then((response) => response.json())
+   //       .then(data => setAdvertiseData(data))
+   //       .catch((error) => console.error(error))
+   // }, [])
 
    const authInfo = {
       user,
@@ -61,6 +70,7 @@ const AuthProvider = ({ children }) => {
       logOut,
       loading,
       products,
+      // AdvertiseData,
    }
    return (
       <AuthContext.Provider value={authInfo}>

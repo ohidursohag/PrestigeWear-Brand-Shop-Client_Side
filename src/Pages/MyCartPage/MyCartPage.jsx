@@ -12,8 +12,8 @@ const MyCartPage = () => {
       setCurrentCartItems(remainingItems)
    }
 
-   
-   
+
+
    return (
       <div className="dark:bg-gray-900 py-[100px]">
          <div className="container mx-auto px-2 sm:px-4">
@@ -21,7 +21,11 @@ const MyCartPage = () => {
             <h1 className="text-center text-4xl font-bold my-10 dark:text-white">My Cart</h1>
             <div className="space-y-8 sm:space-y-5 max-w-[700px] mx-auto">
                {
-                  currentCartItems.map((cartItem) => <CartItemCard key={cartItem._id} cartItem={cartItem} handleRemoveDeletedItem={handleRemoveDeletedItem}></CartItemCard>)
+                  currentCartItems.length
+                     ? currentCartItems.map((cartItem) => <CartItemCard key={cartItem._id} cartItem={cartItem} handleRemoveDeletedItem={handleRemoveDeletedItem}></CartItemCard>)
+                     : <div className="text-center text-2xl text-gray-500 font-bold">
+                        No Data Found
+                     </div>
                }
             </div>
          </div>

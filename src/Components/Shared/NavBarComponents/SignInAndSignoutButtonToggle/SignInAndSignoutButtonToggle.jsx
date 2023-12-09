@@ -41,12 +41,11 @@ const SignInAndSignoutButtonToggle = () => {
                      <figure className='w-10 h-10 border border-gray-400 rounded-full'>
                         <img className='w-10 rounded-full' src={user?.photoURL || userLogo} alt="" />
                      </figure>
-                     <p className='text-[#C1B17D]'>{user?.displayName.slice(0, 10) || 'user name'}</p>
+                     <p className='text-[#C1B17D]'>{user?.displayName?.slice(0, 10) || 'user name'}</p>
                   </div>
-                  <NavLink className='text-white md:text-[#C1B17D] md:border-[3px] md:border-[#C1B17D] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}
-                     to='' >
+                  <button className='text-white md:text-[#C1B17D] md:border-[3px] md:border-[#C1B17D] md:rounded-lg md:px-2 md:py-1' onClick={handleSignOut}>
                      <span className=' text-xl font-medium ' >Sign Out</span>
-                  </NavLink>
+                  </button>
                </div>
                : <NavLink to={location.pathname === '/signin' ? '/signup' : location.pathname === '/signup' ? '/signin' : '/signin'}>
                   <span className={` font-medium text-xl border-[3px]  rounded-lg px-2 py-1 ${location.pathname === '/signin' || location.pathname === '/signup' ? 'text-white border-white md:text-[#C1B17D]  md:border-[#C1B17D]' : 'border-black'} `} >{location.pathname === '/signin' ? 'Sign Up' : location.pathname === '/signup' ? 'Sign In' : 'Sign In'}</span>

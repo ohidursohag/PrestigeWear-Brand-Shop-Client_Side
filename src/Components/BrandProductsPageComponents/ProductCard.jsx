@@ -1,9 +1,10 @@
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AiOutlineStar, AiTwotoneStar } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 const ProductCard = ({ product }) => {
-
+   const loc = useLocation()
+   console.log(loc);
    const {_id, brandName, productImage, productName, productPrice, productRatings, productType } = product || {};
    // console.log(product);
    return (
@@ -51,7 +52,7 @@ const ProductCard = ({ product }) => {
                         Details
                      </button>
                   </Link>
-                  <Link className="inline-block" to={`/update-product/${_id}`}>
+                  <Link state={loc.pathname} className="inline-block" to={`/update-product/${_id}`}>
                      <button
                         className="block w-full select-none rounded-lg bg-sky-500 py-3.5 px-7 text-center align-middle font-sans text-lg font-bold  text-white shadow-md shadow-sky-500/50 transition-all hover:shadow-lg hover:shadow-sky-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none "
                         type="button"

@@ -12,9 +12,9 @@ const ErrorHandlePage = () => {
       <div className="container mx-auto min-h-screen flex justify-center items-center">
          <div className="flex flex-col justify-center items-center space-y-5">
             <Lottie className="w-[200px] " animationData={ErrorAnimation} loop={true} />
-            <div className="text-7xl font-bold ">{error.status}</div>
-            <div className="text-3xl font-medium  ">{error.statusText || error.error.message}</div>
-            <div className="text-3xl font-medium  ">{error.data}</div>
+            <div className="text-7xl font-bold ">{error?.status}</div>
+            <div className="text-3xl font-medium  ">{error?.statusText || error?.error?.message}</div>
+            <div className="text-3xl font-medium  ">{error?.data}</div>
 
             <div>
                <Link onClick={() => navigate(-1)} className="text-[#C1B17D] bg-[rgba(255,68,74,0.15)] px-2 py-1 rounded-md text-xl font-medium hover:underline flex items-center gap-2">Go Back <RiArrowGoBackLine /> </Link>

@@ -1,12 +1,14 @@
 import Swal from "sweetalert2";
 import ProductDataForm from "../../Components/Shared/ProductDataForm/ProductDataForm";
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import BackToHome from "../../Components/BackToHome/BackToHome";
 
 const UpdateProductPage = () => {
    const existingProductData = useLoaderData()
    console.log(existingProductData);
-
+   const loc = useLocation();
+   console.log(loc.state);
+   const navigate = useNavigate()
    const handleUpdateProduct = async (e) => {
       e.preventDefault();
       const form = e.target;
@@ -35,10 +37,12 @@ const UpdateProductPage = () => {
             Swal.fire({
                position: 'top',
                icon: 'success',
-               title: 'Coffee successfully Updated',
+               title: 'Product successfully Updated',
                showConfirmButton: false,
                timer: 1500
             })
+            
+            navigate(loc.state)
 
          } else {
             Swal.fire({

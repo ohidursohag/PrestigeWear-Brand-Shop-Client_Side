@@ -64,10 +64,10 @@ const CartItemCard = ({ cartItem, handleRemoveDeletedItem }) => {
                      </h3>
                   </div>
                </div>
-               <button onClick={() => handleDeleteCartItem(_id)} title='Delete Coffee' className=' bg-[#EA4744] w-[40px] h-[40px] flex items-center justify-center rounded-lg '>
-                  <MdDelete className='  text-white text-2xl '></MdDelete>
-               </button >
-
+               <button onClick={() => handleDeleteCartItem(_id)} title='Delete Item'
+                  className='bg-[#EA4744] w-[40px] h-[40px] flex items-center justify-center rounded-lg '>
+                  <MdDelete className='text-white text-2xl'></MdDelete>
+               </button>
             </div>
          </div>
       </div>
